@@ -1,13 +1,13 @@
+#ifndef StackADT_h
+#define StackADT_h
+
 #include <stdio.h>
 #include <stdlib.h>
-
-#ifndef "StackADT_h"
-#define "StackADT_h"
 
 #define SIZE 5 // Size of stack
 
 // Stack Structure
-struct
+typedef struct
 {
   int arr[SIZE];
   int top;
