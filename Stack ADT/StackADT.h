@@ -19,6 +19,6 @@ int pop(stack *); // Pop operation to remove element at top position
 
 void display(stack *); // Display the Entire Stack elements
 
-int peek(stack *); // To show top element without modifying the stack
+void peek(stack *); // To show top element without modifying the stack
 
 #endif

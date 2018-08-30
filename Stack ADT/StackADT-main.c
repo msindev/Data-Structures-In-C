@@ -2,11 +2,13 @@
 
 int main()
 {
-  int choice;
+  int choice,element;
   stack s;
+  s.top = -1;
   while(1)
   {
-    int element;
+    system("cls")
+    display(&s);
     printf("1. Push\n 2. Pop\n 3. Display Stack \n 4. Peek/(Element at Top/) \n 5. EXIT \n");
     printf("Enter choice: ");
     scanf("%d", &choice);
