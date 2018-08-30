@@ -6,14 +6,13 @@ int main()
   stack s;
   while(1)
   {
-
+    int element;
     printf("1. Push\n 2. Pop\n 3. Display Stack \n 4. Peek/(Element at Top/) \n 5. EXIT \n");
     printf("Enter choice: ");
     scanf("%d", &choice);
     switch(choice)
     {
       case 1:
-        int element;
         printf("Enter element to be added: ");
         scanf("%d", &element);
         push(&s, element);
