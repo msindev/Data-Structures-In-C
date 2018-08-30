@@ -9,7 +9,7 @@
 typedef struct
 {
   int arr[SIZE];
-  int front,top;
+  int front,rear;
 }queue;
 
 void display(queue *);

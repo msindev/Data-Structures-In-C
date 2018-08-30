@@ -4,17 +4,19 @@ int main()
 {
   int choice,element;
   queue q;
-  q->front = -1;
-  q->rear = -1;
+  q.front = -1;
+  q.rear = -1;
   while(1)
   {
+    printf("Present Queue: ");
+    display(&q);
     printf("1. Enqueue \n 2. Dequeue \n 3. Display \n 4. Exit\n");
     printf("Enter choice: ");
     scanf("%d", &choice);
     switch(choice)
     {
       case 1:
-        if(!isFUll(&q))
+        if(!isFull(&q))
         {
           printf("Enter element to be inserted: ");
           scanf("%d", &element);
@@ -39,9 +41,9 @@ int main()
         display(&q);
         break;
       case 4:
-        exit();
+        exit(0);
       default:
-        printf("%s\n", Invalid Choice);
+        printf("%s\n", "Invalid Choice");
     }
   }
   return 0;
