@@ -2,7 +2,7 @@
 
 int isFull(queue *q)
 {
-  if((q->rear == SIZE -1 && q->front == 0) || q->rear = q->front - 1)
+  if((q->rear == SIZE -1 && q->front == 0) || q->rear == q->front - 1)
   {
     return 1;
   }
@@ -11,7 +11,7 @@ int isFull(queue *q)
 
 int isEmpty(queue *q)
 {
-  if(front == -1)
+  if(q->front == -1)
   {
     return 1;
   }
