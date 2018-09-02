@@ -10,7 +10,7 @@ int main()
     printf("Current Queue: ");
     display(&q);
     printf("\n Front = %d Rear = %d", q.front, q.rear);
-    printf("\n 1. Enqueue Element \n 2. Dequeue Element \n 3. Display Queue \n 4. Get Front \n 5. Get Rear \n 6. EXIT\n");
+    printf("\n 1. Enqueue Element \n 2. Dequeue Element \n 3. Display Queue \n 4. EXIT\n");
     scanf("%d",&choice);
     switch(choice)
     {
@@ -30,20 +30,6 @@ int main()
         display(&q);
         break;
       case 4:
-        front_element = getFront(&q);
-        if(front_element == -1)
-          printf("Queue is Empty\n");
-        else
-          printf("Element at Front: %d\n", front_element);
-        break;
-      case 5:
-        rear_element = getRear(&q);
-        if(rear_element == -1)
-          printf("Queue is Empty\n");
-        else
-          printf("Element at Rear: %d\n", rear_element);
-        break;
-      case 6:
         exit(0);
       default:
         printf("Invalid Choice.\n");

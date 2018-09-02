@@ -12,8 +12,6 @@ typedef struct
   int arr[SIZE];
 }queue;
 
-int getFront(queue *);
-int getRear(queue *);
 void enqueue(queue *, int);
 int dequeue(queue *);
 void display(queue *);

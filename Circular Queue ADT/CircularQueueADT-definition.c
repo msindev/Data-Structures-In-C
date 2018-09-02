@@ -2,7 +2,7 @@
 
 int isFull(queue *q)
 {
-  if((q->rear == SIZE && q->front == 0) || (q->rear == q->front - 1))
+  if((q->rear == SIZE - 1 && q->front == 0) || (q->rear == q->front - 1))
   {
     return 1;
   }
@@ -22,16 +22,21 @@ void enqueue(queue *q, int element)
 {
   if(!isFull(q))
   {
-    if(q->rear == SIZE-1 && q->front != 0)
-    {
-      q->rear = 0;
-    }
     if(q->front == -1)
     {
-      q->front = 0;
-      q->rear = 0;
+      q->front = q->rear = 0;
+      q->arr[q->rear] = element;
     }
-    q->arr[q->rear++] = element;
+    else if(q->rear == SIZE - 1 && q->front != 0)
+    {
+      q->rear = 0;
+      q->arr[q->rear] = element;
+    }
+    else
+    {
+      q->rear++;
+      q->arr[q->rear] = element;
+    }
   }
   else
   {
@@ -46,8 +51,6 @@ int dequeue(queue *q)
     printf("Queue Underflow\n");
     return -1;
   }
-  else
-  {
     int data = q->arr[q->front];
     if(q->front == q->rear)
     {
@@ -63,21 +66,6 @@ int dequeue(queue *q)
       q->front++;
     }
     return data;
-  }
-}
-
-int getFront(queue *q)
-{
-  if(!isEmpty(q))
-    return q->arr[q->front];
-  return -1;
-}
-
-int getRear(queue *q)
-{
-  if(!isEmpty(q))
-    return q->arr[q->rear-1];
-  return -1;
 }
 
 void display(queue *q)
@@ -89,19 +77,18 @@ void display(queue *q)
   }
   else
   {
-    if(q->front > q->rear)
+    if(q->rear >= q->front)
     {
-      for(i = q->front ; i < SIZE; i++)
-        printf("%d /(%d/) ", q->arr[i],i);
-      for(j = 0; j <= q->rear; j++)
-        printf("%d ", q->arr[i]);
-      printf("\n");
+      for(i = q->front; i <= q->rear; i++)
+        printf("%d ",q->arr[i]);
     }
     else
     {
-      for(i = q->front; i < q->rear; i++)
-        printf("%d ", q->arr[i]);
-      printf("\n");
+      for (i = q->front; i < SIZE; i++)
+            printf("%d ", q->arr[i]);
+
+        for (i = 0; i <= q->rear; i++)
+            printf("%d ", q->arr[i]);
     }
   }
 }
