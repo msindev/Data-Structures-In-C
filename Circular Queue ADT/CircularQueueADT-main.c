@@ -7,7 +7,9 @@ int main()
   q.front = q.rear = -1;
   while(1)
   {
-    printf("1. Enqueue Element \n 2. Dequeue Element \n 3. Display Queue \n 4. Get Front \n 5. Get Rear \n 6. EXIT\n");
+    printf("Current Queue: ");
+    display(&q);
+    printf("\n 1. Enqueue Element \n 2. Dequeue Element \n 3. Display Queue \n 4. Get Front \n 5. Get Rear \n 6. EXIT\n");
     scanf("%d",&choice);
     switch(choice)
     {
