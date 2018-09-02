@@ -9,12 +9,13 @@ int main()
   {
     printf("Current Queue: ");
     display(&q);
+    printf("\n Front = %d Rear = %d", q.front, q.rear);
     printf("\n 1. Enqueue Element \n 2. Dequeue Element \n 3. Display Queue \n 4. Get Front \n 5. Get Rear \n 6. EXIT\n");
     scanf("%d",&choice);
     switch(choice)
     {
       case 1:
-        printf("Enter element to be inseted : ");
+        printf("Enter element to be inserted : ");
         scanf("%d", &element);
         enqueue(&q, element);
         break;
@@ -22,6 +23,8 @@ int main()
         deleted_element = dequeue(&q);
         if(deleted_element != -1)
           printf("Dequeued Element : %d\n", deleted_element);
+        else
+          printf("Queue is Empty.\n");
         break;
       case 3:
         display(&q);
@@ -35,7 +38,7 @@ int main()
         break;
       case 5:
         rear_element = getRear(&q);
-        if(rear_element = -1)
+        if(rear_element == -1)
           printf("Queue is Empty\n");
         else
           printf("Element at Rear: %d\n", rear_element);

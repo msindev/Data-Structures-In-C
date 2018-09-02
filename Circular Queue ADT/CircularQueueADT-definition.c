@@ -2,7 +2,7 @@
 
 int isFull(queue *q)
 {
-  if((q->rear == SIZE -1 && q->front == 0) || q->rear == q->front - 1)
+  if((q->rear == SIZE && q->front == 0) || (q->rear == q->front - 1))
   {
     return 1;
   }
@@ -22,13 +22,14 @@ void enqueue(queue *q, int element)
 {
   if(!isFull(q))
   {
-    if(q->rear == SIZE - 1 && q->front != 0)
+    if(q->rear == SIZE-1 && q->front != 0)
     {
       q->rear = 0;
     }
-    else if(q->front == -1)
+    if(q->front == -1)
     {
-      q->front = q->rear = 0;
+      q->front = 0;
+      q->rear = 0;
     }
     q->arr[q->rear++] = element;
   }
@@ -50,9 +51,10 @@ int dequeue(queue *q)
     int data = q->arr[q->front];
     if(q->front == q->rear)
     {
-      q->front = q->rear = -1;
+      q->front = -1;
+      q->rear = -1;
     }
-    else if(q->front == SIZE - 1)
+    else if(q->front == SIZE - 1 )
     {
       q->front = 0;
     }
@@ -74,7 +76,7 @@ int getFront(queue *q)
 int getRear(queue *q)
 {
   if(!isEmpty(q))
-    return q->arr[q->rear];
+    return q->arr[q->rear-1];
   return -1;
 }
 
@@ -90,14 +92,14 @@ void display(queue *q)
     if(q->front > q->rear)
     {
       for(i = q->front ; i < SIZE; i++)
-        printf("%d ", q->arr[i]);
+        printf("%d /(%d/) ", q->arr[i],i);
       for(j = 0; j <= q->rear; j++)
         printf("%d ", q->arr[i]);
       printf("\n");
     }
     else
     {
-      for(i = q->front; i <= q->rear; i++)
+      for(i = q->front; i < q->rear; i++)
         printf("%d ", q->arr[i]);
       printf("\n");
     }
