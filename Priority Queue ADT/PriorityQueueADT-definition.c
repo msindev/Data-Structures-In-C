@@ -1,36 +1,35 @@
 #include "PriorityQueueADT.h"
 
-void penqueue(queue *q, int element, int priority)
+void penqueue(queue[5], int element, int priority)
 {
-	if(!isFull(&q[i])
-		enqueue(&q[i], element);
+	if(!isFull(&queue[priority]))
+		enqueue(&queue[priority], element);
 	else
 		return;
 }
 
-void pdisplay(queue *q)
+void pdisplay(queue[5])
 {
 	int i;
 	for(i=0;i<5;i++)
 	{
-		if(!isEmpty(q[i])
+		if(!isEmpty(&queue[i]))
 		{
 			printf("Queue %d : ");
-			display(q[i]);
+			display(&queue[i]);
 		}
 		else
 			printf("Queue %d is Empty\n");
 	}
 }
 
-int pdequeue(queue *q)
+int pdequeue(queue[5])
 {
 	int i;
 	for(i = 0;i<5;i++)
 	{
-		if(!isEmpty(q[i])
-			return dequeue(q[i]);
+		if(!isEmpty(&queue[i]))
+			return dequeue(&queue[i]);
 	}
 	return -1;
 }
-		

@@ -2,6 +2,6 @@
 
 #include <limits.h>
 
-void penqueue(queue *, int, int);
-int pdequeue(queue *);
-void pdisplay(queue *);
+void penqueue(queue[5], int, int);
+int pdequeue(queue[5]);
+void pdisplay(queue[5]);

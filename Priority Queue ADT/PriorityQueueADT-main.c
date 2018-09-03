@@ -1,4 +1,4 @@
-#include "PriortyQueueADT.h"
+#include "PriorityQueueADT.h"
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 			case 1:
 				printf("Enter priority: ");
 				scanf("%d", &priority);
-				if(!isFull(&q[priority])
+				if(!isFull(&q[priority]))
 				{
 					printf("Enter element: ");
 					scanf("%d", &element);
