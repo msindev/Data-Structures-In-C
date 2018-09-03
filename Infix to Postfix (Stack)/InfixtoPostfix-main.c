@@ -4,7 +4,8 @@ int main()
 {
   char infix[SIZE];
   printf("Enter Infix Expression: ");
-  scanf("[^\n]",infix);
+  scanf("%[^\n]",infix);
+  printf("Infix Expression : %s\n",infix);
   infixToPostfix(infix);
   return 0;
 }

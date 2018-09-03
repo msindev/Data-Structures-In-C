@@ -19,7 +19,7 @@ char pop(stack *s)
 {
   if(!isEmpty(s))
     return s->arr[s->top--];
-  return '$'
+  return '#';
 }
 
 void push(stack *s, char op)
@@ -51,28 +51,32 @@ int precedence(char ch)
 void infixToPostfix(char exp[])
 {
   stack temp;
+  temp.top = -1;
   char postfix[SIZE];
-  int j=0;
+  int j=0,i;
   for(i = 0; i < strlen(exp); i++)
   {
     if(isOperand(exp[i]))
       postfix[j++] = exp[i];
     else if(exp[i] == '(')
-      push(&t, exp[i]);
+      push(&temp, exp[i]);
     else if(exp[i] == ')')
     {
       while(!isEmpty(&temp) && peek(&temp) != '(')
-        postfix[j++] = pop(&temp);
+          postfix[j++] = pop(&temp);
     }
     else
     {
-      while(!isEmpty(&temp) && precedence(exp[i]) <= precedence(peek(&temp)))
-        postfix[j++] = pop(&temp);
+      while(!isEmpty(&temp) && (precedence(exp[i]) <= precedence(peek(&temp))))
+          postfix[j++] = pop(&temp);
       push(&temp, exp[i]);
     }
   }
   while(!isEmpty(&temp))
-    postfix[j++] = pop(&temp);
+    if(peek(&temp) != '(')
+      postfix[j++] = pop(&temp);
+    else
+      pop(&temp);
 
   postfix[j] = '\0';
   printf("Postfix Expression : %s\n",postfix);
