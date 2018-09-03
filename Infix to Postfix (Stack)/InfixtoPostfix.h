@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define SIZE 50
 
@@ -17,10 +18,10 @@ int isEmpty(stack *s);
 int isFull(stack *s);
 char peek(stack *s);
 char pop(stack *s);
-void push(stack *s);
+void push(stack *s, char);
 
 int isOperand(char);
-int isPrecedence(char ch);
-int infixToPostfix(char*);
+int precedence(char ch);
+void infixToPostfix(char[]);
 
 #endif
