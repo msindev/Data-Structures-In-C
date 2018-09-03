@@ -51,7 +51,7 @@ int precedence(char ch)
 void infixToPostfix(char exp[])
 {
   stack temp;
-  char postfix[50];
+  char postfix[SIZE];
   int j=0;
   for(i = 0; i < strlen(exp); i++)
   {
