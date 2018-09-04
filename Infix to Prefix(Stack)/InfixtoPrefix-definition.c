@@ -58,11 +58,11 @@ void infixToPrefix(char exp[])
   {
     if(isOperand(exp[i]))
       prefix[j++] = exp[i];
-    else if(exp[i] == '(')
-      push(&temp, exp[i]);
     else if(exp[i] == ')')
+      push(&temp, exp[i]);
+    else if(exp[i] == '(')
     {
-      while(!isEmpty(&temp) && peek(&temp) != '(')
+      while(!isEmpty(&temp) && peek(&temp) != ')')
           prefix[j++] = pop(&temp);
     }
     else
@@ -73,11 +73,11 @@ void infixToPrefix(char exp[])
     }
   }
   while(!isEmpty(&temp))
-    if(peek(&temp) != '(')
+    if(peek(&temp) != ')')
       prefix[j++] = pop(&temp);
     else
       pop(&temp);
 
   prefix[j] = '\0';
-  printf("Prefix Expression : %s\n",prefix);
+  printf("Prefix Expression : %s\n",strrev(prefix));
 }

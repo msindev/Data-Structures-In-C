@@ -6,6 +6,6 @@ int main()
   printf("Enter Infix Expression: ");
   scanf("%[^\n]",infix);
   printf("Infix Expression : %s\n",infix);
-  infixToPrefix(infix);
+  infixToPrefix(strrev(infix));
   return 0;
 }
