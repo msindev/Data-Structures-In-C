@@ -6,13 +6,13 @@
 struct node
 {
   int coeff;
-  int exp;
+  int exponent;
   struct node *next;
 };
 
 typedef struct node *NODE;
 
-NODE readPolynomial(NODE first);
+NODE readPolynomial(NODE);
 NODE insert(int, int, NODE);
 NODE multiply(NODE, NODE);
 void display(NODE);
