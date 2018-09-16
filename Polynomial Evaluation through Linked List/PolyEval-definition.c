@@ -40,7 +40,7 @@ NODE insert(int coeff, int exponent, NODE first)
 NODE multiply(NODE p1, NODE p2)
 {
   NODE p = p1, q = p2;
-  NODE result = NULL:
+  NODE result = NULL;
   if(p == NULL || q == NULL)
   {
     printf("Multiplied Polynomial is a zero degree polynomial.\n");
