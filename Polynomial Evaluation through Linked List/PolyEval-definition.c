@@ -68,10 +68,12 @@ void display(NODE first)
     return;
   }
   temp = first;
-  while(temp != NULL)
+  while(temp ->next != NULL)
   {
     printf("%dx^%d + ", temp -> coeff, temp -> exponent);
     temp = temp -> next;
   }
+  temp = temp -> next;
+  printf("%dx^%d + ", temp -> coeff, temp -> exponent);
   printf("\n");
 }
