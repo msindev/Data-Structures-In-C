@@ -6,8 +6,8 @@ Programs Included -
 ### Stack ADT
 ### Queue ADT
 ### Circular Queue ADT
-### Priority Queue
+### Priority Queue (TODO)
 ### Infix to Postfix conversion using Stack
 ### Infix to Prefix conversion using Stack
-### Linked List ADT
+### Linked List ADT (TODO)
 ### Polynomial Evaluation through Linked List
