@@ -6,10 +6,10 @@ typedef struct
 {
   int front;
   int rear;
-  char arr[SIZE][100];
+  int arr[SIZE];
 }queue;
 
-void enqueue(queue *, char[100]);
+void enqueue(queue *, int);
 char* dequeue(queue *);
 void display(queue *);
 int isFull(queue *);
@@ -32,5 +32,3 @@ int isEmpty(queue *q)
   }
   return 0;
 }
-
-
