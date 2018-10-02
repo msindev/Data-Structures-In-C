@@ -6,7 +6,7 @@ int main()
   int choice, num;
   while (1)
   {
-    printf("1. Insert Element in Tree\n 2. Delete Element from Tree\n 3. Tree Traversals\n 4. EXIT\n");
+    printf("\n1. Insert Element in Tree\n 2. Delete Element from Tree\n 3. Tree Traversals\n 4. EXIT\n");
     scanf("%d", &choice);
     switch(choice)
     {
