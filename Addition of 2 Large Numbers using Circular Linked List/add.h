@@ -8,13 +8,7 @@ struct node
   struct node *next;
 };
 
-struct node *getnode()
-{
-  struct node *newnode = (struct node *)malloc(sizeof(struct node));
-  newnode -> next = newnode;
-  return newnode;
-}
-
+struct node *getnode();
 struct node *insert(struct node *,int);
 struct node *addToList(struct node *, struct node *);
 void printlist(struct node *);
