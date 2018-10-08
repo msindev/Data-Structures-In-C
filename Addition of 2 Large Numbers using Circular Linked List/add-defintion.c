@@ -73,16 +73,18 @@ struct node *addToList(struct node *first, struct node *second)
   if(carry > 0)
   {
     res = insert(res, carry);
-    return res;
   }
+  return res;
 }
 
 void printlist(struct node *head)
 {
   struct node *temp = head;
-  while(temp != NULL)
+  temp = temp -> next;
+  while(temp != head)
   {
-    print("%d", temp -> data);
+    printf("%d", temp -> data);
     temp = temp -> next;
   }
+  printf("\n");
 }

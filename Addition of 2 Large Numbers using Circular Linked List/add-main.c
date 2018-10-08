@@ -15,21 +15,25 @@ int main()
   second -> next = second;
   printf("Enter number 1: ");
   scanf("%s", str1);
+  getchar();
   printf("Enter number 2: ");
   scanf("%s", str2);
   for(i = 0; str1[i] != '\0'; i++)
   {
-    num = str[i] - 48;
+    num = str1[i] - 48;
     first = insert(first, num);
   }
-  printlist(first);
-  for(i = 0; str2 != '\0'; i++)
+  printf("1st Number: ");
+  puts(str1);
+  for(i = 0; str2[i] != '\0'; i++)
   {
     num = str2[i] - 48;
     second = insert(second, num);
   }
-  printlist(second);
-  res = addtolist(first, second);
+  printf("Second Number: ");
+  puts(str2);
+  res = addToList(first, second);
+  printf("Result: ");
   printlist(res);
   return 0;
 }
