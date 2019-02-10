@@ -17,3 +17,5 @@ Programs Included -
 ### Hashing Using Linear Probing
 ### Expression Tree
 ### Merge Sort
+### Quick Sort
+### Depth First Search
