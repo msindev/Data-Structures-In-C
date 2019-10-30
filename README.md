@@ -4,8 +4,8 @@ Implementation of Data Structures like Stacks, Queues, etc. using C programming 
 
 Programs Included -
 
-### Stack ADT
-### Queue ADT
+### Stack ADT(Abstract Data Type)
+### Queue ADT(Abstract Data type)
 ### Circular Queue ADT
 ### Priority Queue (TODO)
 ### Infix to Postfix conversion using Stack
